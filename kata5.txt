@@ -1,0 +1,124 @@
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge (master)
+$ git branch greeting
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge (master)
+$ git switch greetinf
+fatal: invalid reference: greetinf
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge (master)
+$ git switch greeting
+Switched to branch 'greeting'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge (greeting)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise/.git/
+[master (root-commit) 06d2c8d] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: in the working copy of 'greeting.txt', LF will be replaced by CRLF the next time Git touches it
+[master 2eb8066] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git branch
+* master
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git branch greeting
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git branch
+  greeting
+* master
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ cat greeting.txt
+hello
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ echo "Good Morning" > greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git add greeting.txt
+warning: in the working copy of 'greeting.txt', LF will be replaced by CRLF the next time Git touches it
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git commit -m "1st commit"
+[master 81af116] 1st commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git switch master
+Already on 'master'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ touch README.md
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ echo "good morning" >README.md
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ echo "this about git katas" > README.md
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git commit -m "README update"
+[master 6c6855c] README update
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git log --oneline --graph --all
+* 6c6855c (HEAD -> master) README update
+* 81af116 1st commit
+* 2eb8066 (greeting) Add content to greeting.txt
+* 06d2c8d Add file greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git diff master greeting
+diff --git a/README.md b/README.md
+deleted file mode 100644
+index fee685a..0000000
+--- a/README.md
++++ /dev/null
+@@ -1 +0,0 @@
+-this about git katas
+diff --git a/greeting.txt b/greeting.txt
+index 7fd5231..ce01362 100644
+--- a/greeting.txt
++++ b/greeting.txt
+@@ -1 +1 @@
+-Good Morning
++hello
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git merge greeting
+Already up to date.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git merge greeting master
+Already up to date.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git log --oneline --graph --all
+* 6c6855c (HEAD -> master) README update
+* 81af116 1st commit
+* 2eb8066 (greeting) Add content to greeting.txt
+* 06d2c8d Add file greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git merge master greeting
+Already up to date.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git remote add origin https://github.com/Nithinvanamala/git-katas.git
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (master)
+$ git branch -M 3-way-merge
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/3-way-merge/exercise (3-way-merge)
+$ git push -u origin 3-way-merge

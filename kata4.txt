@@ -1,0 +1,138 @@
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge (master)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise/.git/
+[master (root-commit) d589fbc] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: in the working copy of 'greeting.txt', LF will be replaced by CRLF the next time Git touches it
+[master 4654d2e] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ git branch feature/uppercase
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ git switch feature/uppercase
+Switched to branch 'feature/uppercase'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (feature/uppercase)
+$ git status
+On branch feature/uppercase
+nothing to commit, working tree clean
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (feature/uppercase)
+$ cat greetins.txt
+cat: greetins.txt: No such file or directory
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (feature/uppercase)
+$ cat greetings.txt
+cat: greetings.txt: No such file or directory
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (feature/uppercase)
+$ cat greeting.txt
+hello
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (feature/uppercase)
+$ echo "HELLO" > greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (feature/uppercase)
+$ git branch
+* feature/uppercase
+  master
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (feature/uppercase)
+$ git log --oneline --graph --all
+* 4654d2e (HEAD -> feature/uppercase, master) Add content to greeting.txt
+* d589fbc Add file greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (feature/uppercase)
+$ git switch master
+Switched to branch 'master'
+M       greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ cat greeting.txt
+HELLO
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ git diff master feature/uppercase
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ git merge master feature/uppercase
+Already up to date.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ cat greeting.txt
+HELLO
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ git delete -b feature/uppercase
+git: 'delete' is not a git command. See 'git --help'.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ git branch -b feature/uppercase
+error: unknown switch `b'
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-f] [--recurse-submodules] <branch-name> [<start-point>]
+   or: git branch [<options>] [-l] [<pattern>...]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track[=(direct|inherit)]
+                          set branch tracking configuration
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --list            list branch names
+    --show-current        show current branch name
+    --create-reflog       create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --recurse-submodules  recurse through submodules
+    --format <format>     format to use for the output
+
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ git branch -d feature/uppercase
+Deleted branch feature/uppercase (was 4654d2e).
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ git branch
+* master
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ git remote add origin https://github.com/Nithinvanamala/git-katas.git
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (master)
+$ git branch -M ff-merge
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/ff-merge/exercise (ff-merge)
+$ git push -u origin ff-merge

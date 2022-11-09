@@ -1,0 +1,97 @@
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/amend (ter)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-4/git-katas/ad/exercise/.git/
+warning: in the working copy of 'foo.txt', LF will be replaced by CRLF the netime Git touches it
+[master (root-commit) 29066fd] feature 73
+ 1 file changed, 1 insertion(+)
+ create mode 100644 foo.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/amend/ecise (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bar.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/amend/ecise (master)
+$ git log -p
+commit 29066fd273516607e2226d14f5a060a12ebf788f (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:54:35 2022 +0530
+
+    feature 73
+
+diff --git a/foo.txt b/foo.txt
+new file mode 100644
+index 0000000..257cc56
+--- /dev/null
++++ b/foo.txt
+@@ -0,0 +1 @@
++foo
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/amend/ecise (master)
+$ cat bar.txt
+bar
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/amend/ecise (master)
+$ git commit --amend
+hint: Waiting for your editor to close the file... unix2dos: converting file zemoso/learning/git/day1-4/git-katas/amend/exercise/.git/COMMIT_EDITMSG to DOormat...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/amend/exerc/.git/COMMIT_EDITMSG to Unix format...
+[master e618202] feature 73
+ Date: Wed Nov 9 21:54:35 2022 +0530
+ 1 file changed, 1 insertion(+)
+ create mode 100644 foo.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/amend/ecise (master)
+$ git log -p
+commit e6182026f7f929535c48e41252aacb493bfec831 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:54:35 2022 +0530
+
+    feature 73
+
+    ammend
+
+diff --git a/foo.txt b/foo.txt
+new file mode 100644
+index 0000000..257cc56
+--- /dev/null
++++ b/foo.txt
+@@ -0,0 +1 @@
++foo
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/amend/ecise (master)
+$ git commit --amend
+hint: Waiting for your editor to close the file... unix2dos: converting file zemoso/learning/git/day1-4/git-katas/amend/exercise/.git/COMMIT_EDITMSG to DOormat...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/amend/exerc/.git/COMMIT_EDITMSG to Unix format...
+[master 56186b5] feature 73
+ Date: Wed Nov 9 21:54:35 2022 +0530
+ 1 file changed, 1 insertion(+)
+ create mode 100644 foo.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/amend/ecise (master)
+$ git log -p
+commit 56186b56d8046cf2b850451972252df9218f3349 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:54:35 2022 +0530
+
+    feature 73
+
+    ammend
+
+    ammend2
+
+diff --git a/foo.txt b/foo.txt
+new file mode 100644
+index 0000000..257cc56
+--- /dev/null
++++ b/foo.txt
+@@ -0,0 +1 @@
++foo
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/amend/ecise (master)
+$
+

@@ -1,0 +1,335 @@
+ter)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-4/git-katas/reset/exercise/.git/
+warning: in the working copy of '1.txt', LF will be replaced by CRLF the next time Git touches it
+[master (root-commit) c53e8fc] 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 1.txt
+warning: in the working copy of '2.txt', LF will be replaced by CRLF the next time Git touches it
+[master 7b55b0a] 2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 2.txt
+warning: in the working copy of '3.txt', LF will be replaced by CRLF the next time Git touches it
+[master 0616b2f] 3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 3.txt
+warning: in the working copy of '4.txt', LF will be replaced by CRLF the next time Git touches it
+[master 7426cde] 4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 4.txt
+warning: in the working copy of '5.txt', LF will be replaced by CRLF the next time Git touches it
+[master 2ff7288] 5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 5.txt
+warning: in the working copy of '6.txt', LF will be replaced by CRLF the next time Git touches it
+[master f4c62e1] 6
+ 1 file changed, 1 insertion(+)
+ create mode 100644 6.txt
+warning: in the working copy of '7.txt', LF will be replaced by CRLF the next time Git touches it
+[master 862aca7] 7
+ 1 file changed, 1 insertion(+)
+ create mode 100644 7.txt
+warning: in the working copy of '8.txt', LF will be replaced by CRLF the next time Git touches it
+[master 8309e65] 8
+ 1 file changed, 1 insertion(+)
+ create mode 100644 8.txt
+warning: in the working copy of '9.txt', LF will be replaced by CRLF the next time Git touches it
+[master 24f9453] 9
+ 1 file changed, 1 insertion(+)
+ create mode 100644 9.txt
+warning: in the working copy of '10.txt', LF will be replaced by CRLF the next time Git touches it
+[master e21b39d] 10
+ 1 file changed, 1 insertion(+)
+ create mode 100644 10.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reset/exercise (master)
+$ git log
+commit e21b39d9c6fda89542df316ee0c2af7557a580d7 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:20 2022 +0530
+
+    10
+
+commit 24f9453e325655df7fb2d25f42a28b0adc200dff
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:20 2022 +0530
+
+    9
+
+commit 8309e65ed7a22f636fe3b2687654e02f489029c9
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    8
+
+commit 862aca720e7c1c40ea8144aa476282e4eab217d8
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    7
+
+commit f4c62e183606b80b57341cad23f07f13916848cb
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    6
+
+commit 2ff7288413da113246e7f6a4ee2c2a77ed69a113
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    5
+
+commit 7426cde2a1d1121319ef6d8d19d87e3a918d7a0a
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    4
+
+commit 0616b2fe80d844dcecc68d6fd0850f09a9ee9143
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    3
+
+commit 7b55b0aa66bd0f1f0080c61398c7be2552578d8b
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:17 2022 +0530
+
+    2
+
+commit c53e8fceb2b45b09711d55ff3e975ff5a95b5fb3
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:17 2022 +0530
+
+    1
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reset/exercise (master)
+$ git reset --soft HEAD~1
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reset/exercise (master)
+$ git log
+commit 24f9453e325655df7fb2d25f42a28b0adc200dff (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:20 2022 +0530
+
+    9
+
+commit 8309e65ed7a22f636fe3b2687654e02f489029c9
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    8
+
+commit 862aca720e7c1c40ea8144aa476282e4eab217d8
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    7
+
+commit f4c62e183606b80b57341cad23f07f13916848cb
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    6
+
+commit 2ff7288413da113246e7f6a4ee2c2a77ed69a113
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    5
+
+commit 7426cde2a1d1121319ef6d8d19d87e3a918d7a0a
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    4
+
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reset/exercise (master)
+$
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reset/exercise (master)
+$ git reset --mixed HEAD~1
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reset/exercise (master)
+$ git log
+commit 8309e65ed7a22f636fe3b2687654e02f489029c9 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    8
+
+commit 862aca720e7c1c40ea8144aa476282e4eab217d8
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    7
+
+commit f4c62e183606b80b57341cad23f07f13916848cb
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    6
+
+commit 2ff7288413da113246e7f6a4ee2c2a77ed69a113
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    5
+
+commit 7426cde2a1d1121319ef6d8d19d87e3a918d7a0a
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    4
+
+commit 0616b2fe80d844dcecc68d6fd0850f09a9ee9143
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    3
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reset/exercise (master)
+$ git reset --hard HEAD~1
+HEAD is now at 862aca7 7
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reset/exercise (master)
+$ git log
+commit 862aca720e7c1c40ea8144aa476282e4eab217d8 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    7
+
+commit f4c62e183606b80b57341cad23f07f13916848cb
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    6
+
+commit 2ff7288413da113246e7f6a4ee2c2a77ed69a113
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    5
+
+commit 7426cde2a1d1121319ef6d8d19d87e3a918d7a0a
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    4
+
+commit 0616b2fe80d844dcecc68d6fd0850f09a9ee9143
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    3
+
+commit 7b55b0aa66bd0f1f0080c61398c7be2552578d8b
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:17 2022 +0530
+
+    2
+
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reset/exercise (master)
+$
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reset/exercise (master)
+$ git revert HEAD~1
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/reset/exercise/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/reset/exercise/.git/COMMIT_EDITMSG to Unix format...
+[master 07efada] Revert "6"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 6.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reset/exercise (master)
+$ git log
+commit 07efadac2b0b4a113de4b6d6005cc8ff7ec2f595 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:25:36 2022 +0530
+
+    Revert "6"
+
+    This reverts commit f4c62e183606b80b57341cad23f07f13916848cb.
+
+    revert
+
+commit 862aca720e7c1c40ea8144aa476282e4eab217d8
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    7
+
+commit f4c62e183606b80b57341cad23f07f13916848cb
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    6
+
+commit 2ff7288413da113246e7f6a4ee2c2a77ed69a113
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    5
+
+commit 7426cde2a1d1121319ef6d8d19d87e3a918d7a0a
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    4
+
+commit 0616b2fe80d844dcecc68d6fd0850f09a9ee9143
+:...skipping...
+commit 07efadac2b0b4a113de4b6d6005cc8ff7ec2f595 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:25:36 2022 +0530
+
+    Revert "6"
+
+    This reverts commit f4c62e183606b80b57341cad23f07f13916848cb.
+
+    revert
+
+commit 862aca720e7c1c40ea8144aa476282e4eab217d8
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    7
+
+commit f4c62e183606b80b57341cad23f07f13916848cb
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:19 2022 +0530
+
+    6
+
+commit 2ff7288413da113246e7f6a4ee2c2a77ed69a113
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    5
+
+commit 7426cde2a1d1121319ef6d8d19d87e3a918d7a0a
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    4
+
+commit 0616b2fe80d844dcecc68d6fd0850f09a9ee9143
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:18 2022 +0530
+
+    3
+
+commit 7b55b0aa66bd0f1f0080c61398c7be2552578d8b
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:17 2022 +0530
+
+    2
+
+commit c53e8fceb2b45b09711d55ff3e975ff5a95b5fb3
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 21:20:17 2022 +0530
+
+    1

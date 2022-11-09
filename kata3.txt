@@ -1,0 +1,123 @@
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching (master)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise/.git/
+Successfully configured local username and email
+Successfully disable local GPG signing
+warning: in the working copy of 'dummy.txt', LF will be replaced by CRLF the next time Git touches it
+[master (root-commit) 7098e90] dummy commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dummy.txt
+Switched to a new branch 'second-branch'
+Switched to branch 'master'
+Successfully unset local username and email
+Successfully unset local GPG signing
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (master)
+$ git branch
+* master
+  second-branch
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (master)
+$ git branch mybranch
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (master)
+$ git branch
+* master
+  mybranch
+  second-branch
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ git status
+On branch mybranch
+nothing to commit, working tree clean
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ touch fileq.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ git add file1.txt
+fatal: pathspec 'file1.txt' did not match any files
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ git add fileq.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ git commit -m "fileq commit"
+[mybranch 13717f4] fileq commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fileq.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ git log --oneline --graph
+* 13717f4 (HEAD -> mybranch) fileq commit
+* 7098e90 (second-branch, master) dummy commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ git switch master
+Switched to branch 'master'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (master)
+$ git log --oneline --graph
+* 7098e90 (HEAD -> master, second-branch) dummy commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (master)
+$ echo file2.txt
+file2.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (master)
+$ touch file2.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (master)
+$ git log --oneline --graph --all
+* 13717f4 (mybranch) fileq commit
+* 7098e90 (HEAD -> master, second-branch) dummy commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ ls -la
+total 5
+drwxr-xr-x 1 heart 197609 0 Nov  9 13:40 ./
+drwxr-xr-x 1 heart 197609 0 Nov  9 13:36 ../
+drwxr-xr-x 1 heart 197609 0 Nov  9 13:40 .git/
+-rw-r--r-- 1 heart 197609 6 Nov  9 13:36 dummy.txt
+-rw-r--r-- 1 heart 197609 0 Nov  9 13:39 file2.txt
+-rw-r--r-- 1 heart 197609 0 Nov  9 13:40 fileq.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ la
+bash: la: command not found
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ ls
+dummy.txt  file2.txt  fileq.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ git diff mybranch master
+diff --git a/fileq.txt b/fileq.txt
+deleted file mode 100644
+index e69de29..0000000
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ git remote add origin https://github.com/Nithinvanamala/git-katas.git
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (mybranch)
+$ git branch -M basic-branching
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (basic-branching)
+$ git push -u basic-branching
+fatal: 'basic-branching' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-2/git-katas/basic-branching/exercise (basic-branching)
+$ git push -u origin basic-branching

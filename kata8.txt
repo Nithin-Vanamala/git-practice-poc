@@ -1,0 +1,165 @@
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch (master)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise/.git/
+[master (root-commit) c472f86] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+warning: in the working copy of 'greeting.txt', LF will be replaced by CRLF the next time Git touches it
+[master 5daf3c3] Add content to greeting.txt
+ 1 file changed, 1 insertion(+)
+Switched to a new branch 'uppercase'
+warning: in the working copy of 'greeting.txt', LF will be replaced by CRLF the next time Git touches it
+[uppercase 7666b8a] Change greeting to uppercase
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Switched to branch 'master'
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+[master 83a2d35] Add readme
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (master)
+$ git branch
+* master
+  uppercase
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (master)
+$ git log
+commit 83a2d3580652751af3fb245d1d2215e04d3473f8 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:56 2022 +0530
+
+    Add readme
+
+commit 5daf3c363943deed74c65d6df349d6245b1f2175
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:55 2022 +0530
+
+    Add content to greeting.txt
+
+commit c472f8684d87437581633e36596223c4d33a92be
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:55 2022 +0530
+
+    Add file greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (master)
+$ git switch uppercase
+Switched to branch 'uppercase'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (uppercase)
+$ git log
+commit 7666b8a6832e2382f23c67a52f37296b77ed6f7b (HEAD -> uppercase)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:55 2022 +0530
+
+    Change greeting to uppercase
+
+commit 5daf3c363943deed74c65d6df349d6245b1f2175
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:55 2022 +0530
+
+    Add content to greeting.txt
+
+commit c472f8684d87437581633e36596223c4d33a92be
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:55 2022 +0530
+
+    Add file greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (uppercase)
+$ git rebase master
+Successfully rebased and updated refs/heads/uppercase.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (uppercase)
+$ git log
+commit 7946652b53c0dc36ca508de892209cadf0889f01 (HEAD -> uppercase)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:55 2022 +0530
+
+    Change greeting to uppercase
+
+commit 83a2d3580652751af3fb245d1d2215e04d3473f8 (master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:56 2022 +0530
+
+    Add readme
+
+commit 5daf3c363943deed74c65d6df349d6245b1f2175
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:55 2022 +0530
+
+    Add content to greeting.txt
+
+commit c472f8684d87437581633e36596223c4d33a92be
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:55 2022 +0530
+
+    Add file greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (uppercase)
+$ ls
+README.md  greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (uppercase)
+$ cat README.md
+Greetings library
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (uppercase)
+$ cat greeting.txt
+HELLO
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (uppercase)
+$ git switch master
+Switched to branch 'master'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (master)
+$ cat greeting.txt
+hello
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (master)
+$ git merge uppercase
+Updating 83a2d35..7946652
+Fast-forward
+ greeting.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (master)
+$ cat greeting.txt
+HELLO
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (master)
+$ git log
+commit 7946652b53c0dc36ca508de892209cadf0889f01 (HEAD -> master, uppercase)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:55 2022 +0530
+
+    Change greeting to uppercase
+
+commit 83a2d3580652751af3fb245d1d2215e04d3473f8
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:56 2022 +0530
+
+    Add readme
+
+commit 5daf3c363943deed74c65d6df349d6245b1f2175
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:55 2022 +0530
+
+    Add content to greeting.txt
+
+commit c472f8684d87437581633e36596223c4d33a92be
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Wed Nov 9 20:26:55 2022 +0530
+
+    Add file greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (master)
+$ git log --oneline --graph --all
+* 7946652 (HEAD -> master, uppercase) Change greeting to uppercase
+* 83a2d35 Add readme
+* 5daf3c3 Add content to greeting.txt
+* c472f86 Add file greeting.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/rebase-branch/exercise (master)
+$

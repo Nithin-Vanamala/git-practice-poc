@@ -1,0 +1,487 @@
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort (master)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise/.git/
+warning: in the working copy of 'mergesort.py', LF will be replaced by CRLF the next time Git touches it
+[master (root-commit) be010d4] Fake it till you make it - Faking mergesort using python .sort() method
+ 1 file changed, 5 insertions(+)
+ create mode 100644 mergesort.py
+Switched to a new branch 'Mergesort-Impl'
+warning: in the working copy of 'mergesort.py', LF will be replaced by CRLF the next time Git touches it
+[Mergesort-Impl 6e4be71] Mergesort implemented on feature branch
+ 1 file changed, 43 insertions(+), 3 deletions(-)
+Switched to branch 'master'
+warning: in the working copy of 'mergesort.py', LF will be replaced by CRLF the next time Git touches it
+[master bd7c6d2] Mergesort implemented on master
+ 1 file changed, 43 insertions(+), 3 deletions(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git branch
+  Mergesort-Impl
+* master
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ ls
+mergesort.py
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ cat mergesort.py
+from heapq import merge
+
+def merge_sort2(m):
+    """Sort list, using two part merge sort"""
+    if len(m) <= 1:
+        return m
+
+    # Determine the pivot point
+    middle = len(m) // 2
+
+    # Split the list at the pivot
+    left = m[:middle]
+    right = m[middle:]
+
+    # Sort recursively
+    right = merge_sort2(right)
+    left = merge_sort2(left)
+
+    # Merge and return
+    return list(merge(right, left))
+
+def merge_sort4(m):
+    """Sort list, using four part merge sort"""
+    if len(m) <= 4:
+        return sorted(m)
+
+    # Determine the pivot point
+    middle = len(m) // 2
+    leftMiddle = middle // 2
+    rightMiddle = middle + leftMiddle
+
+    # Split the list at the pivots
+    first = m[:leftMiddle]
+    second = m[leftMiddle:middle]
+    third = m[middle:rightMiddle]
+    last = m[rightMiddle:]
+
+    # Sort recursively
+    first = merge_sort4(first)
+    second = merge_sort4(second)
+    third = merge_sort4(third)
+    last = merge_sort4(last)
+
+    # Merge and return
+    return list(merge(first, second, third, last))
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git merge Mergesort-Impl
+Auto-merging mergesort.py
+CONFLICT (content): Merge conflict in mergesort.py
+Automatic merge failed; fix conflicts and then commit the result.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master|MERGING)
+$ cat mergesort.py
+from heapq import merge
+
+def merge_sort2(m):
+    """Sort list, using two part merge sort"""
+    if len(m) <= 1:
+        return m
+
+    # Determine the pivot point
+    middle = len(m) // 2
+
+    # Split the list at the pivot
+<<<<<<< HEAD
+    left = m[:middle]
+    right = m[middle:]
+=======
+    right = m[middle:]
+    left = m[:middle]
+>>>>>>> Mergesort-Impl
+
+    # Sort recursively
+    right = merge_sort2(right)
+    left = merge_sort2(left)
+
+    # Merge and return
+    return list(merge(right, left))
+
+def merge_sort4(m):
+    """Sort list, using four part merge sort"""
+    if len(m) <= 4:
+        return sorted(m)
+
+    # Determine the pivot point
+    middle = len(m) // 2
+    leftMiddle = middle // 2
+    rightMiddle = middle + leftMiddle
+
+    # Split the list at the pivots
+    first = m[:leftMiddle]
+    second = m[leftMiddle:middle]
+    third = m[middle:rightMiddle]
+<<<<<<< HEAD
+    last = m[rightMiddle:]
+=======
+    fourth = m[rightMiddle:]
+>>>>>>> Mergesort-Impl
+
+    # Sort recursively
+    first = merge_sort4(first)
+    second = merge_sort4(second)
+    third = merge_sort4(third)
+<<<<<<< HEAD
+    last = merge_sort4(last)
+
+    # Merge and return
+    return list(merge(first, second, third, last))
+=======
+    fourth = merge_sort4(fourth)
+
+    # Merge and return
+    return list(merge(first,second, third, fourth))
+>>>>>>> Mergesort-Impl
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master|MERGING)
+$ git merge --quit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ cat mergesort.py
+from heapq import merge
+
+def merge_sort2(m):
+    """Sort list, using two part merge sort"""
+    if len(m) <= 1:
+        return m
+
+    # Determine the pivot point
+    middle = len(m) // 2
+
+    # Split the list at the pivot
+<<<<<<< HEAD
+    left = m[:middle]
+    right = m[middle:]
+=======
+    right = m[middle:]
+    left = m[:middle]
+>>>>>>> Mergesort-Impl
+
+    # Sort recursively
+    right = merge_sort2(right)
+    left = merge_sort2(left)
+
+    # Merge and return
+    return list(merge(right, left))
+
+def merge_sort4(m):
+    """Sort list, using four part merge sort"""
+    if len(m) <= 4:
+        return sorted(m)
+
+    # Determine the pivot point
+    middle = len(m) // 2
+    leftMiddle = middle // 2
+    rightMiddle = middle + leftMiddle
+
+    # Split the list at the pivots
+    first = m[:leftMiddle]
+    second = m[leftMiddle:middle]
+    third = m[middle:rightMiddle]
+<<<<<<< HEAD
+    last = m[rightMiddle:]
+=======
+    fourth = m[rightMiddle:]
+>>>>>>> Mergesort-Impl
+
+    # Sort recursively
+    first = merge_sort4(first)
+    second = merge_sort4(second)
+    third = merge_sort4(third)
+<<<<<<< HEAD
+    last = merge_sort4(last)
+
+    # Merge and return
+    return list(merge(first, second, third, last))
+=======
+    fourth = merge_sort4(fourth)
+
+    # Merge and return
+    return list(merge(first,second, third, fourth))
+>>>>>>> Mergesort-Impl
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git log --merge
+fatal: --merge without MERGE_HEAD?
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git log --merge Mergesort-Impl
+fatal: --merge without MERGE_HEAD?
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ vim mergesort.py
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git merge Mergesort-Impl
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git add -A
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git commit -m "after commit"
+[master fe63ee4] after commit
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git merge Mergesort-Impl
+Auto-merging mergesort.py
+CONFLICT (content): Merge conflict in mergesort.py
+Automatic merge failed; fix conflicts and then commit the result.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master|MERGING)
+$ git commit -m "after commit"
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       mergesort.py
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master|MERGING)
+$ git merge --quit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git commit -m "after commit"
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       mergesort.py
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git add -A
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git commit -m "abcd"
+[master 18d1245] abcd
+ 1 file changed, 42 insertions(+)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git merge Mergesort-Impl
+Auto-merging mergesort.py
+CONFLICT (content): Merge conflict in mergesort.py
+Automatic merge failed; fix conflicts and then commit the result.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master|MERGING)
+$ cat mergesort.py
+from heapq import merge
+
+def merge_sort2(m):
+    """Sort list, using two part merge sort"""
+    if len(m) <= 1:
+        return m
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Mergesort-Impl
+
+    # Determine the pivot point
+    middle = len(m) // 2
+
+    # Split the list at the pivot
+    right = m[middle:]
+    left = m[:middle]
+
+    # Sort recursively
+    right = merge_sort2(right)
+    left = merge_sort2(left)
+
+    # Merge and return
+    return list(merge(right, left))
+
+def merge_sort4(m):
+    """Sort list, using four part merge sort"""
+    if len(m) <= 4:
+        return sorted(m)
+
+    # Determine the pivot point
+    middle = len(m) // 2
+    leftMiddle = middle // 2
+    rightMiddle = middle + leftMiddle
+
+    # Split the list at the pivots
+    first = m[:leftMiddle]
+    second = m[leftMiddle:middle]
+    third = m[middle:rightMiddle]
+    fourth = m[rightMiddle:]
+
+    # Sort recursively
+    first = merge_sort4(first)
+    second = merge_sort4(second)
+    third = merge_sort4(third)
+    fourth = merge_sort4(fourth)
+
+    # Merge and return
+    return list(merge(first,second, third, fourth))
+<<<<<<< HEAD
+
+=======
+
+    # Determine the pivot point
+    middle = len(m) // 2
+
+    # Split the list at the pivot
+    right = m[middle:]
+    left = m[:middle]
+
+    # Sort recursively
+    right = merge_sort2(right)
+    left = merge_sort2(left)
+
+    # Merge and return
+    return list(merge(right, left))
+
+def merge_sort4(m):
+    """Sort list, using four part merge sort"""
+    if len(m) <= 4:
+        return sorted(m)
+
+    # Determine the pivot point
+    middle = len(m) // 2
+    leftMiddle = middle // 2
+    rightMiddle = middle + leftMiddle
+
+    # Split the list at the pivots
+    first = m[:leftMiddle]
+    second = m[leftMiddle:middle]
+    third = m[middle:rightMiddle]
+    fourth = m[rightMiddle:]
+
+    # Sort recursively
+    first = merge_sort4(first)
+    second = merge_sort4(second)
+    third = merge_sort4(third)
+    fourth = merge_sort4(fourth)
+
+    # Merge and return
+    return list(merge(first,second, third, fourth))
+>>>>>>> Mergesort-Impl
+=======
+>>>>>>> Mergesort-Impl
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master|MERGING)
+$ vim mergesort.py
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master|MERGING)
+$ vim mergesort.py
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master|MERGING)
+$ cat mergesort.py
+from heapq import merge
+
+def merge_sort2(m):
+    """Sort list, using two part merge sort"""
+    if len(m) <= 1:
+        return m
+
+    # Determine the pivot point
+    middle = len(m) // 2
+
+    # Split the list at the pivot
+    right = m[middle:]
+    left = m[:middle]
+
+    # Sort recursively
+    right = merge_sort2(right)
+    left = merge_sort2(left)
+
+    # Merge and return
+    return list(merge(right, left))
+
+def merge_sort4(m):
+    """Sort list, using four part merge sort"""
+    if len(m) <= 4:
+        return sorted(m)
+
+    # Determine the pivot point
+    middle = len(m) // 2
+    leftMiddle = middle // 2
+    rightMiddle = middle + leftMiddle
+
+    # Split the list at the pivots
+    first = m[:leftMiddle]
+    second = m[leftMiddle:middle]
+    third = m[middle:rightMiddle]
+    fourth = m[rightMiddle:]
+
+    # Sort recursively
+    first = merge_sort4(first)
+    second = merge_sort4(second)
+    third = merge_sort4(third)
+    fourth = merge_sort4(fourth)
+
+    # Merge and return
+    return list(merge(first,second, third, fourth))
+
+
+    # Determine the pivot point
+    middle = len(m) // 2
+
+    # Split the list at the pivot
+    right = m[middle:]
+    left = m[:middle]
+
+    # Sort recursively
+    right = merge_sort2(right)
+    left = merge_sort2(left)
+
+    # Merge and return
+    return list(merge(right, left))
+
+def merge_sort4(m):
+    """Sort list, using four part merge sort"""
+    if len(m) <= 4:
+        return sorted(m)
+
+    # Determine the pivot point
+    middle = len(m) // 2
+    leftMiddle = middle // 2
+    rightMiddle = middle + leftMiddle
+
+    # Split the list at the pivots
+    first = m[:leftMiddle]
+    second = m[leftMiddle:middle]
+    third = m[middle:rightMiddle]
+    fourth = m[rightMiddle:]
+
+    # Sort recursively
+    first = merge_sort4(first)
+    second = merge_sort4(second)
+    third = merge_sort4(third)
+    fourth = merge_sort4(fourth)
+
+    # Merge and return
+    return list(merge(first,second, third, fourth))
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master|MERGING)
+$ git merge Mergesort-Impl
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master|MERGING)
+$ git add -A
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master|MERGING)
+$ git commit -m "hellllo"
+[master b7ae1d6] hellllo
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$ git merge Mergesort-Impl
+Already up to date.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/merge-mergesort/exercise (master)
+$
