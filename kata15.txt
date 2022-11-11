@@ -1,0 +1,1177 @@
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive (master)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/remote/
+Cloning into 'exercise'...
+warning: You appear to have cloned an empty repository.
+done.
+[master (root-commit) e66aa5a] Initial commit
+Enumerating objects: 2, done.
+Counting objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 171 bytes | 171.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/./remote
+ * [new branch]      master -> master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/./remote
+ * [new tag]         v0.0 -> v0.0
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+[master 47cb151] Helo Volrd feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.code
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'other.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'other.code', LF will be replaced by CRLF the next time Git touches it
+[master ef77a80] Finished HW feature
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 other.code
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'other.code', LF will be replaced by CRLF the next time Git touches it
+[master 8497d8c] Really made the thingy done
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+[master 93d34e8] debugging
+ 1 file changed, 1 insertion(+)
+warning: in the working copy of 'private.secret', LF will be replaced by CRLF the next time Git touches it
+[master b46becf] important secret
+ 1 file changed, 1 insertion(+)
+ create mode 100644 private.secret
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+[master 6f006a5] Add doc - step 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'private.secret', LF will be replaced by CRLF the next time Git touches it
+[master bf6bf7a] Add doc - step 2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'private.secret', LF will be replaced by CRLF the next time Git touches it
+[master cd09f9d] Add doc - step 3
+ 1 file changed, 2 insertions(+)
+warning: in the working copy of 'hello.test', LF will be replaced by CRLF the next time Git touches it
+[master b4976f6] Test for feature hello world
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.test
+warning: in the working copy of 'hello.test', LF will be replaced by CRLF the next time Git touches it
+[master 22295fc] I forgot a semicolon
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log
+commit 22295fcdf7815deca1acc53ab6565896b117c6dc (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:21 2022 +0530
+
+    I forgot a semicolon
+
+commit b4976f62594cb38771d4f005b0a8b65a634aca0d
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:21 2022 +0530
+
+    Test for feature hello world
+
+commit cd09f9d2b1b0c84500d14a74616f14e1c97d8cba
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:21 2022 +0530
+
+    Add doc - step 3
+
+commit bf6bf7a3cf08b5845ea5c715da98f2b388483a8b
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    Add doc - step 2
+
+commit 6f006a5b6c49fef1cd4f9184d09962dfe0c2288b
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    Add doc - step 1
+
+commit b46becff917d6c4895263b210d992809c49abf1c
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    important secret
+
+commit 93d34e81f3e786c1f5ace4c22d638b9dd0ec1e9b
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    debugging
+
+commit 8497d8ca6461a71d24f66252abd997fa40802d3f
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    Really made the thingy done
+
+commit ef77a80baff7fab61258b365efca8156bd1e662c
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:19 2022 +0530
+
+    Finished HW feature
+
+commit 47cb151a943dd412a0662cee0f039ff56068dae1
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:19 2022 +0530
+
+    Helo Volrd feature
+
+commit e66aa5a35d368a7a3c10deffcaa0af1633399b46 (tag: v0.0, origin/master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:18 2022 +0530
+
+    Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+22295fc (HEAD -> master) I forgot a semicolon
+b4976f6 Test for feature hello world
+cd09f9d Add doc - step 3
+bf6bf7a Add doc - step 2
+6f006a5 Add doc - step 1
+b46becf important secret
+93d34e8 debugging
+8497d8c Really made the thingy done
+ef77a80 Finished HW feature
+47cb151 Helo Volrd feature
+e66aa5a (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ ls
+README.md  hello.code  hello.test  other.code  private.secret
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ cat hello.code
+Hello World!
+println DEBUG
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ cat hello.test
+does_it_work(hello.code);
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ tail -m +1*
+tail: unknown option -- m
+Try 'tail --help' for more information.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ tail -n +1*
+tail: invalid number of lines: ‘+1*’
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ tail -n +1 *
+==> README.md <==
+# THE Ultimate Hello World program
+
+This program does exactly what it says
+
+==> hello.code <==
+Hello World!
+println DEBUG
+
+==> hello.test <==
+does_it_work(hello.code);
+
+==> other.code <==
+Unrelated stuff!
+
+==> private.secret <==
+4321pass
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase -i HEAD~11
+fatal: invalid upstream 'HEAD~11'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase -i HEAD~10
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+CONFLICT (modify/delete): hello.code deleted in HEAD and modified in ef77a80 (Finished HW feature).  Version ef77a80 (Finished HW feature) of hello.code left in tree.
+error: could not apply ef77a80... Finished HW feature
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply ef77a80... Finished HW feature
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master|REBASE 1/10)
+$ git rebase --quit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ git rebase -i HEAD~10
+fatal: invalid upstream 'HEAD~10'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ ls
+hello.code  other.code
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ cat hello.code
+HelloWrld?
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ cat other.code
+Unrelated stuff!
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ git switch master
+error: you need to resolve your current index first
+hello.code: needs merge
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ git rebase -i HEAD~10
+fatal: invalid upstream 'HEAD~10'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ git rebase -i HEAD~1
+fatal: invalid upstream 'HEAD~1'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ git rebase -i HEAD
+hello.code: needs merge
+error: cannot rebase: You have unstaged changes.
+error: additionally, your index contains uncommitted changes.
+error: Please commit or stash them.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ git merge v0.0
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ git add -A
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ git switch master
+error: Your local changes to the following files would be overwritten by checkout:
+        hello.code
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ git commit -m "commits "
+[detached HEAD 0838f6a] commits
+ 2 files changed, 2 insertions(+)
+ create mode 100644 hello.code
+ create mode 100644 other.code
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((0838f6a...))
+$ git switch master
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  0838f6a commits
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 0838f6a
+
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 10 commits.
+  (use "git push" to publish your local commits)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log
+commit 22295fcdf7815deca1acc53ab6565896b117c6dc (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:21 2022 +0530
+
+    I forgot a semicolon
+
+commit b4976f62594cb38771d4f005b0a8b65a634aca0d
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:21 2022 +0530
+
+    Test for feature hello world
+
+commit cd09f9d2b1b0c84500d14a74616f14e1c97d8cba
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:21 2022 +0530
+
+    Add doc - step 3
+
+commit bf6bf7a3cf08b5845ea5c715da98f2b388483a8b
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    Add doc - step 2
+
+commit 6f006a5b6c49fef1cd4f9184d09962dfe0c2288b
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    Add doc - step 1
+
+commit b46becff917d6c4895263b210d992809c49abf1c
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    important secret
+
+commit 93d34e81f3e786c1f5ace4c22d638b9dd0ec1e9b
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    debugging
+
+commit 8497d8ca6461a71d24f66252abd997fa40802d3f
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    Really made the thingy done
+
+commit ef77a80baff7fab61258b365efca8156bd1e662c
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:19 2022 +0530
+
+    Finished HW feature
+
+commit 47cb151a943dd412a0662cee0f039ff56068dae1
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:19 2022 +0530
+
+    Helo Volrd feature
+
+commit e66aa5a35d368a7a3c10deffcaa0af1633399b46 (tag: v0.0, origin/master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:18 2022 +0530
+
+    Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ ls
+README.md  hello.code  hello.test  other.code  private.secret
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ tail -n +1 *
+==> README.md <==
+# THE Ultimate Hello World program
+
+This program does exactly what it says
+
+==> hello.code <==
+Hello World!
+println DEBUG
+
+==> hello.test <==
+does_it_work(hello.code);
+
+==> other.code <==
+Unrelated stuff!
+
+==> private.secret <==
+4321pass
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase --interactive v0.0
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+22295fc (HEAD -> master) I forgot a semicolon
+b4976f6 Test for feature hello world
+cd09f9d Add doc - step 3
+bf6bf7a Add doc - step 2
+6f006a5 Add doc - step 1
+b46becf important secret
+93d34e8 debugging
+8497d8c Really made the thingy done
+ef77a80 Finished HW feature
+47cb151 Helo Volrd feature
+e66aa5a (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git checkout 47cb151
+Note: switching to '47cb151'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 47cb151 Helo Volrd feature
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((47cb151...))
+$ ls
+hello.code
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((47cb151...))
+$ cat hello.code
+Hello
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((47cb151...))
+$ git checkout ef77a80
+Previous HEAD position was 47cb151 Helo Volrd feature
+HEAD is now at ef77a80 Finished HW feature
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((ef77a80...))
+$ cat hello.code
+HelloWrld?
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((ef77a80...))
+$ git checkout 8497d8c
+Previous HEAD position was ef77a80 Finished HW feature
+HEAD is now at 8497d8c Really made the thingy done
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((8497d8c...))
+$ cat hello.code
+Hello World!
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((8497d8c...))
+$ git checkout b46becf
+Previous HEAD position was 8497d8c Really made the thingy done
+HEAD is now at b46becf important secret
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((b46becf...))
+$ cat hello.code
+Hello World!
+println DEBUG
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((b46becf...))
+$ eche ;>>hello.code
+bash: eche: command not found
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((b46becf...))
+$ echo ;>>hello.code
+
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((b46becf...))
+$ cat hello.code
+Hello World!
+println DEBUG
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((b46becf...))
+$ vim hello.code
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((b46becf...))
+$ cat hello.code
+Hello World!;
+println DEBUG;
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((b46becf...))
+$ git checkout master
+Previous HEAD position was b46becf important secret
+Switched to branch 'master'
+M       hello.code
+Your branch is ahead of 'origin/master' by 10 commits.
+  (use "git push" to publish your local commits)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ cat hello.code
+Hello World!;
+println DEBUG;
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase interactive v0.0
+fatal: invalid upstream 'interactive'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase --interactive v0.0
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git add -A
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git commit -m "final commit:
+> "
+[master ddb9f5b] final commit:
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase --interactive v0.0
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+error: invalid line 4: sqush 93d34e8 debugging
+You can fix this with 'git rebase --edit-todo' and then run 'git rebase --continue'.
+Or you can abort the rebase with 'git rebase --abort'.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master|REBASE)
+$ git rebase --quit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise ((v0.0))
+$ git switch master
+Previous HEAD position was e66aa5a Initial commit
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 11 commits.
+  (use "git push" to publish your local commits)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase --interactive v0.0
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to Unix format...
+[detached HEAD 0776877] Combine 5 into 1
+ Date: Thu Nov 10 07:29:19 2022 +0530
+ 3 files changed, 4 insertions(+)
+ create mode 100644 hello.code
+ create mode 100644 other.code
+ create mode 100644 private.secret
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log
+commit b608ac75cfae098408bcff1c3a73e20a893162b2 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:47:39 2022 +0530
+
+    final commit:
+
+commit f9a60a77c98b4a2585b3fb88390d74767e3a2384
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:21 2022 +0530
+
+    I forgot a semicolon
+
+commit 99003f45dc954b7f50141a45c32cdf9cecc9347c
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:21 2022 +0530
+
+    Test for feature hello world
+
+commit 37041cd353c1d4cded94f73435966efe97416f4f
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:21 2022 +0530
+
+    Add doc - step 3
+
+commit 635e2519f3167c881352f2bf13fabd9e619f9a98
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    Add doc - step 2
+
+commit f6e3dc3ea43fff28ed141732deed3e8e36aef64d
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    Add doc - step 1
+
+commit 077687732a5416652dbe5ef658dddb9d5bf97411
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:19 2022 +0530
+
+    Combine 5 into 1
+
+    Helo Volrd feature
+
+    Finished HW feature
+
+    Really made the thingy done
+
+    debugging
+
+    important secret
+
+commit e66aa5a35d368a7a3c10deffcaa0af1633399b46 (tag: v0.0, origin/master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:18 2022 +0530
+
+    Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase --interactive v0.0
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to Unix format...
+[detached HEAD 7cf67c2] documentation
+ Date: Thu Nov 10 07:29:20 2022 +0530
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.md
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+0b4be79 (HEAD -> master) I forgot a semicolon
+c19d905 Test for feature hello world
+7cf67c2 documentation
+f14089d final commit:
+0776877 Combine 5 into 1
+e66aa5a (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase --interactive v0.0
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to Unix format...
+[detached HEAD 393996d] Hello world feature implementation
+ Date: Thu Nov 10 07:29:19 2022 +0530
+ 3 files changed, 4 insertions(+)
+ create mode 100644 hello.code
+ create mode 100644 other.code
+ create mode 100644 private.secret
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+89e8014 (HEAD -> master) I forgot a semicolon
+fdd3276 Test for feature hello world
+a133b62 documentation
+393996d Hello world feature implementation
+e66aa5a (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --stat
+commit 89e80149b8b974fd161f387148742f69adccc46e (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:21 2022 +0530
+
+    I forgot a semicolon
+
+ hello.test | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fdd32765f0c62af22c4304acce1be14d1489bf3b
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:21 2022 +0530
+
+    Test for feature hello world
+
+ hello.test | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit a133b6252b89d628c54385c6408469fa10c3ae25
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:20 2022 +0530
+
+    documentation
+
+    Add doc - step 1
+
+    Add doc - step 2
+
+    Add doc - step 3
+
+ README.md | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 393996d67335d524705ec94d8d8e57754cda83cd
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:19 2022 +0530
+
+    Hello world feature implementation
+
+    Combine 5 into 1
+
+    Helo Volrd feature
+
+    Finished HW feature
+
+    Really made the thingy done
+
+    debugging
+
+    important secret
+
+    final commit:
+
+ hello.code     | 2 ++
+ other.code     | 1 +
+ private.secret | 1 +
+ 3 files changed, 4 insertions(+)
+
+commit e66aa5a35d368a7a3c10deffcaa0af1633399b46 (tag: v0.0, origin/master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:29:18 2022 +0530
+
+    Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ cd ..
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive (master)
+$ cd ..
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas (master)
+$ cd ..
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4
+$ cd ..
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git
+$ cd day1-3
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3
+$ cd git-katas
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas (master)
+$ cd advanced-rebase-interactive
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive (master)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/remote/
+Cloning into 'exercise'...
+warning: You appear to have cloned an empty repository.
+done.
+[master (root-commit) 49ea721] Initial commit
+Enumerating objects: 2, done.
+Counting objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 171 bytes | 171.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/./remote
+ * [new branch]      master -> master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/./remote
+ * [new tag]         v0.0 -> v0.0
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+[master 3475013] Helo Volrd feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.code
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'other.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'other.code', LF will be replaced by CRLF the next time Git touches it
+[master 726e750] Finished HW feature
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 other.code
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'other.code', LF will be replaced by CRLF the next time Git touches it
+[master 5ade7dc] Really made the thingy done
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'other.code', LF will be replaced by CRLF the next time Git touches it
+[master 7de82ab] debugging
+ 1 file changed, 1 insertion(+)
+warning: in the working copy of 'private.secret', LF will be replaced by CRLF the next time Git touches it
+[master b1b7c89] important secret
+ 1 file changed, 1 insertion(+)
+ create mode 100644 private.secret
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+[master 4bb6460] Add doc - step 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+[master 7dc9f83] Add doc - step 2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+[master fafa13c] Add doc - step 3
+ 1 file changed, 2 insertions(+)
+warning: in the working copy of 'hello.test', LF will be replaced by CRLF the next time Git touches it
+[master 3aee95e] Test for feature hello world
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.test
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'hello.test', LF will be replaced by CRLF the next time Git touches it
+[master 89d33bf] I forgot a semicolon
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+89d33bf (HEAD -> master) I forgot a semicolon
+3aee95e Test for feature hello world
+fafa13c Add doc - step 3
+7dc9f83 Add doc - step 2
+4bb6460 Add doc - step 1
+b1b7c89 important secret
+7de82ab debugging
+5ade7dc Really made the thingy done
+726e750 Finished HW feature
+3475013 Helo Volrd feature
+49ea721 (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase --interactive v0.0
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to Unix format...
+[detached HEAD 4d9ce2d] Helo wolrd feature
+ Date: Thu Nov 10 08:07:58 2022 +0530
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.code
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+a6efd11 (HEAD -> master) I forgot a semicolon
+7274285 Test for feature hello world
+e95ad61 Add doc - step 3
+0c7d888 Add doc - step 2
+a43d311 Add doc - step 1
+434b0ec important secret
+b1fc7cd debugging
+f3055b5 Really made the thingy done
+29b9fe3 Finished HW feature
+4d9ce2d Helo wolrd feature
+49ea721 (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/exercise (master)
+$ git add hello.code
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/exercise (master)
+$ git commit --fixup f3055b5
+On branch master
+Your branch is ahead of 'origin/master' by 10 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/exercise (master)
+$ git commit --fixup 5ade7dc
+On branch master
+Your branch is ahead of 'origin/master' by 10 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive/exercise (master)
+$ cd ..
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas/advanced-rebase-interactive (master)
+$ cd ..
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas (master)
+$ cd..
+bash: cd..: command not found
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3/git-katas (master)
+$ cd ..
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-3
+$ cd ..
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git
+$ cd day1-4
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4
+$ cd git-katas
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas (master)
+$ cd advanced-rebase-interactive
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive (master)
+$ git log
+commit 4db7563ce5ec8605526322312c59262ce527d870 (HEAD -> master, origin/sofusalbertsen-patch-1, origin/master, origin/HEAD)
+Author: Jan Krag <jan.krag@eficode.com>
+Date:   Wed Oct 26 08:54:03 2022 +0200
+
+    Update README.md
+
+commit 3b089416eeb4c2d80c4f2aaef815114dff33f9bb
+Author: Jan Krag <jan.krag@eficode.com>
+Date:   Tue Oct 25 00:11:11 2022 +0300
+
+    More improvements to submodules README
+
+    * Formatting
+    * Add comment about git submodule update --init
+
+commit 1796d04a966465cdd3f243d816964ff946d1b8c7
+Author: Jan Krag <jan.krag@eficode.com>
+Date:   Mon Oct 24 23:44:27 2022 +0300
+
+    Cleanup of submodules kata README
+
+commit 8f8ea88e47f7f29983783c54fdce4daa872bc0fc
+Author: Jan Krag <jan.krag@eficode.com>
+Date:   Tue Oct 25 23:04:00 2022 +0300
+
+    fixup! Rewrite and complete kata steps for image exif diff
+
+commit cbcb04e4af765946972c28f4156f5019430bbfed
+Author: Jan Krag <jan.krag@eficode.com>
+Date:   Tue Oct 25 01:00:23 2022 +0300
+
+    Rewrite and complete kata steps for image exif diff
+
+    * Add large Mario file to avoid dependency on online source
+    * Move png example to an advanced section.
+    * complete and clean up description for png part.
+
+commit fe59efb9c9b0a573ba5ed7a82c05d8ac8ba88c46
+Author: Jan Krag <jan.krag@eficode.com>
+Date:   Thu Oct 6 10:09:17 2022 +0300
+
+    Added resized mario image for git-attributes kata
+
+commit 83c2c023de292e4be7329814e6d0154b345209ff
+Author: Jan Krag <jan.krag@eficode.com>
+Date:   Mon Oct 24 23:49:24 2022 +0300
+
+    Fine tune linting of LFS readme
+
+commit d04ba8e8d5abd69ab739dcade9e93f912805637b
+Author: Jan Krag <jan.krag@eficode.com>
+Date:   Tue Oct 25 01:08:02 2022 +0300
+
+    Improve wording in ff-merge README to be more correct
+
+commit 7faef20ec1bc2bed0ddb54754d72464396a98bbd
+Author: Jan Krag <jan.krag@eficode.com>
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive (master)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/remote/
+Cloning into 'exercise'...
+warning: You appear to have cloned an empty repository.
+done.
+[master (root-commit) 59bd70c] Initial commit
+Enumerating objects: 2, done.
+Counting objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 171 bytes | 171.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/./remote
+ * [new branch]      master -> master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/./remote
+ * [new tag]         v0.0 -> v0.0
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+[master 047f80a] Helo Volrd feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.code
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'other.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'other.code', LF will be replaced by CRLF the next time Git touches it
+[master c3ca194] Finished HW feature
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 other.code
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'other.code', LF will be replaced by CRLF the next time Git touches it
+[master a2fc938] Really made the thingy done
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+warning: in the working copy of 'hello.code', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'other.code', LF will be replaced by CRLF the next time Git touches it
+[master 4088e45] debugging
+ 1 file changed, 1 insertion(+)
+warning: in the working copy of 'private.secret', LF will be replaced by CRLF the next time Git touches it
+[master 2ba6a64] important secret
+ 1 file changed, 1 insertion(+)
+ create mode 100644 private.secret
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+[master 4abf066] Add doc - step 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'private.secret', LF will be replaced by CRLF the next time Git touches it
+[master 96c56c1] Add doc - step 2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'private.secret', LF will be replaced by CRLF the next time Git touches it
+[master a30f584] Add doc - step 3
+ 1 file changed, 2 insertions(+)
+warning: in the working copy of 'hello.test', LF will be replaced by CRLF the next time Git touches it
+[master 2efa7d7] Test for feature hello world
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.test
+warning: in the working copy of 'hello.test', LF will be replaced by CRLF the next time Git touches it
+[master 9e7586a] I forgot a semicolon
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+9e7586a (HEAD -> master) I forgot a semicolon
+2efa7d7 Test for feature hello world
+a30f584 Add doc - step 3
+96c56c1 Add doc - step 2
+4abf066 Add doc - step 1
+2ba6a64 important secret
+4088e45 debugging
+a2fc938 Really made the thingy done
+c3ca194 Finished HW feature
+047f80a Helo Volrd feature
+59bd70c (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase -interactive c0.0
+error: did you mean `--interactive` (with two dashes)?
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase -interactive v0.0
+error: did you mean `--interactive` (with two dashes)?
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase --interactive v0.0
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to Unix format...
+[detached HEAD dabaa23] Helo World feature
+ Date: Thu Nov 10 08:17:24 2022 +0530
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.code
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+39e9227 (HEAD -> master) I forgot a semicolon
+595f67d Test for feature hello world
+3a4d531 Add doc - step 3
+93d2b93 Add doc - step 2
+e55bf7c Add doc - step 1
+f6029e8 important secret
+c9e2582 debugging
+6afb807 Really made the thingy done
+b232b09 Finished HW feature
+dabaa23 Helo World feature
+59bd70c (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase --interactive v0.0
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to Unix format...
+[detached HEAD ecd7c58] Documentation
+ Date: Thu Nov 10 08:17:25 2022 +0530
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.md
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+b8f2328 (HEAD -> master) I forgot a semicolon
+cc1e98b Test for feature hello world
+ecd7c58 Documentation
+f6029e8 important secret
+c9e2582 debugging
+6afb807 Really made the thingy done
+b232b09 Finished HW feature
+dabaa23 Helo World feature
+59bd70c (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ vim hello.code
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git add hello.code
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git commit -m "helo World feature"
+[master 0086978] helo World feature
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log
+commit 008697828529b704b684b81e9d5fed7cde8efcb2 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 08:25:29 2022 +0530
+
+    helo World feature
+
+commit b8f232849760d409c79cbc25c29d3339690c6129
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 08:17:26 2022 +0530
+
+    I forgot a semicolon
+
+commit cc1e98bc4a5aaa105222c2121bb70c694765b61a
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 08:17:26 2022 +0530
+
+    Test for feature hello world
+
+commit ecd7c58974b4b5462e0302bcb82da0e9236c7685
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 08:17:25 2022 +0530
+
+    Documentation
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+0086978 (HEAD -> master) helo World feature
+b8f2328 I forgot a semicolon
+cc1e98b Test for feature hello world
+ecd7c58 Documentation
+f6029e8 important secret
+c9e2582 debugging
+6afb807 Really made the thingy done
+b232b09 Finished HW feature
+dabaa23 Helo World feature
+59bd70c (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase -i --autosquash 59bd70c
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+0086978 (HEAD -> master) helo World feature
+b8f2328 I forgot a semicolon
+cc1e98b Test for feature hello world
+ecd7c58 Documentation
+f6029e8 important secret
+c9e2582 debugging
+6afb807 Really made the thingy done
+b232b09 Finished HW feature
+dabaa23 Helo World feature
+59bd70c (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase -i v0.0
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/COMMIT_EDITMSG to Unix format...
+[detached HEAD b3d1d1d] helo World feature
+ Date: Thu Nov 10 08:17:24 2022 +0530
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.code
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+e77b3bd (HEAD -> master) helo World feature
+9698349 I forgot a semicolon
+a039e2d Test for feature hello world
+acee090 Documentation
+9367505 important secret
+b512391 debugging
+57ad11e Really made the thingy done
+13dec43 Finished HW feature
+b3d1d1d helo World feature
+59bd70c (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git rebase -i --autosquash 59bd70c
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$ git log --oneline
+e77b3bd (HEAD -> master) helo World feature
+9698349 I forgot a semicolon
+a039e2d Test for feature hello world
+acee090 Documentation
+9367505 important secret
+b512391 debugging
+57ad11e Really made the thingy done
+13dec43 Finished HW feature
+b3d1d1d helo World feature
+59bd70c (tag: v0.0, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/advanced-rebase-interactive/exercise (master)
+$

@@ -1,0 +1,138 @@
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing (master)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-4/git-katas/squashing/exercise/.git/
+[master (root-commit) 0c0afb4] initial file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 alsoafile.txt
+warning: in the working copy of 'file.txt', LF will be replaced by CRLF the next time Git touches it
+[master decef4f] Add relevant fact
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+warning: in the working copy of 'file.txt', LF will be replaced by CRLF the next time Git touches it
+[master 4ecc128] Add more relevancy
+ 1 file changed, 1 insertion(+)
+warning: in the working copy of 'file.txt', LF will be replaced by CRLF the next time Git touches it
+[master e947e8b] most relevant!
+ 1 file changed, 1 insertion(+)
+warning: in the working copy of 'file.txt', LF will be replaced by CRLF the next time Git touches it
+[master 6a0a926] add prime directive
+ 1 file changed, 1 insertion(+)
+warning: in the working copy of 'file.txt', LF will be replaced by CRLF the next time Git touches it
+[master a6784f4] add the word!
+ 1 file changed, 1 insertion(+)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$ git log
+commit a6784f46c7dda98b5dc85765f78b5e8bde419a06 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:12:03 2022 +0530
+
+    add the word!
+
+commit 6a0a9269e88085120d6edeff687e723abca14ac9
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:12:02 2022 +0530
+
+    add prime directive
+
+commit e947e8bd6b2f3666fba74395ad7e62adc222a787
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:12:02 2022 +0530
+
+    most relevant!
+
+commit 4ecc1288013fa1a785cba854e9d1386dc777d3d8
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:12:02 2022 +0530
+
+    Add more relevancy
+
+commit decef4fd69c2130d2a2c3a0b3efd24929a1d4f0e
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:12:02 2022 +0530
+
+    Add relevant fact
+
+commit 0c0afb405e16fed22dc86aea324071a5a0f09146
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:12:01 2022 +0530
+
+    initial file
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$ git log --oneline
+a6784f4 (HEAD -> master) add the word!
+6a0a926 add prime directive
+e947e8b most relevant!
+4ecc128 Add more relevancy
+decef4f Add relevant fact
+0c0afb4 initial file
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$ git rebase -i HEAD~6
+fatal: invalid upstream 'HEAD~6'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$ git rebase -i HEAD~5
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/squashing/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/squashing/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+error: cannot 'squash' without a previous commit
+You can fix this with 'git rebase --edit-todo' and then run 'git rebase --continue'.
+Or you can abort the rebase with 'git rebase --abort'.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master|REBASE)
+$ git rebase --quit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise ((0c0afb4...))
+$ git switch master
+Previous HEAD position was 0c0afb4 initial file
+Switched to branch 'master'
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$ git log --oneline
+a6784f4 (HEAD -> master) add the word!
+6a0a926 add prime directive
+e947e8b most relevant!
+4ecc128 Add more relevancy
+decef4f Add relevant fact
+0c0afb4 initial file
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$ git rebase -i HEAD~5
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/squashing/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/squashing/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/squashing/exercise/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/squashing/exercise/.git/COMMIT_EDITMSG to Unix format...
+[detached HEAD 13df567] Combine 6 into 1
+ Date: Thu Nov 10 07:12:02 2022 +0530
+ 1 file changed, 5 insertions(+)
+ create mode 100644 file.txt
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$ cat file.txtt
+cat: file.txtt: No such file or directory
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$ ls
+alsoafile.txt  file.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$ cat file.txt
+This is a relevant fact\n
+This is also relevant\n
+Perhaps this is the most relevant\n
+This is the prime directive\n
+NEVER change public history
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$ git log --oneline
+13df567 (HEAD -> master) Combine 6 into 1
+0c0afb4 initial file
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/squashing/exercise (master)
+$

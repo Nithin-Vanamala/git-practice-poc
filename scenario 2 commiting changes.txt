@@ -1,0 +1,144 @@
+This is your command line, a safe place to practice & complete the scenario
+
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   committed.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        untracked.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+$ git diff
+ESC[1mdiff --git a/committed.js b/committed.jsESC[m
+ESC[1mindex 12e7e7c..fc77969 100644ESC[m
+ESC[1m--- a/committed.jsESC[m
+ESC[1m+++ b/committed.jsESC[m
+ESC[36m@@ -1 +1 @@ESC[m
+ESC[31m-console.log("Committed File")ESC[m
+ESC[32m+ESC[mESC[32mconsole.log("Demostrating changing a committed file")ESC[m
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   committed.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        untracked.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+$ git diff untracked.js
+$ git diff committed.js
+ESC[1mdiff --git a/committed.js b/committed.jsESC[m
+ESC[1mindex 12e7e7c..fc77969 100644ESC[m
+ESC[1m--- a/committed.jsESC[m
+ESC[1m+++ b/committed.jsESC[m
+ESC[36m@@ -1 +1 @@ESC[m
+ESC[31m-console.log("Committed File")ESC[m
+ESC[32m+ESC[mESC[32mconsole.log("Demostrating changing a committed file")ESC[m
+$ git difftool
+
+This message is displayed because 'diff.tool' is not configured.
+See 'git difftool --tool-help' or 'git help config' for more details.
+'git difftool' will now attempt to use one of the following tools:
+kompare emerge vimdiff
+
+Viewing (1/1): 'committed.js'
+Launch 'vimdiff' [Y/n]? n
+$ git add -A
+$ git diff --staged
+ESC[1mdiff --git a/committed.js b/committed.jsESC[m
+ESC[1mindex 12e7e7c..fc77969 100644ESC[m
+ESC[1m--- a/committed.jsESC[m
+ESC[1m+++ b/committed.jsESC[m
+ESC[36m@@ -1 +1 @@ESC[m
+ESC[31m-console.log("Committed File")ESC[m
+ESC[32m+ESC[mESC[32mconsole.log("Demostrating changing a committed file")ESC[m
+ESC[1mdiff --git a/untracked.js b/untracked.jsESC[m
+ESC[1mnew file mode 100644ESC[m
+ESC[1mindex 0000000..264a5beESC[m
+ESC[1m--- /dev/nullESC[m
+ESC[1m+++ b/untracked.jsESC[m
+ESC[36m@@ -0,0 +1 @@ESC[m
+ESC[32m+ESC[mESC[32mconsole.log("Untracked File")ESC[m
+$ git log
+ESC[33mcommit 38d5fd51b6b9d5c84c3f47ede9c9009b18065a21ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmaste
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:39:10 2022 +0000
+
+    Changed the output message in committed.js
+
+ESC[33mcommit 6b8d2adfbe44e7b0a02bb0472ba672b9c58b2da4ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:33:41 2022 +0000
+
+    Initial Commit
+...skipping...
+ESC[33mcommit 38d5fd51b6b9d5c84c3f47ede9c9009b18065a21ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmaste
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:39:10 2022 +0000
+
+    Changed the output message in committed.js
+
+ESC[33mcommit 6b8d2adfbe44e7b0a02bb0472ba672b9c58b2da4ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:33:41 2022 +0000
+
+    Initial Commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+$ 
+$ git log --pretty=format:"%h %an %ar - %s"
+38d5fd5 Katacoda Scenario 51 seconds ago - Changed the output message in committed.js
+6b8d2ad Katacoda Scenario 6 minutes ago - Initial Commit
+$ git show
+ESC[33mcommit 38d5fd51b6b9d5c84c3f47ede9c9009b18065a21ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmaste
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:39:10 2022 +0000
+
+    Changed the output message in committed.js
+
+ESC[1mdiff --git a/committed.js b/committed.jsESC[m
+ESC[1mindex 12e7e7c..fc77969 100644ESC[m
+ESC[1m--- a/committed.jsESC[m
+ESC[1m+++ b/committed.jsESC[m
+ESC[36m@@ -1 +1 @@ESC[m
+ESC[31m-console.log("Committed File")ESC[m
+ESC[32m+ESC[mESC[32mconsole.log("Demostrating changing a committed file")ESC[m
+ESC[1mdiff --git a/untracked.js b/untracked.jsESC[m
+ESC[1mnew file mode 100644ESC[m
+ESC[1mindex 0000000..264a5beESC[m
+ESC[1m--- /dev/nullESC[m
+ESC[1m+++ b/untracked.jsESC[m
+ESC[36m@@ -0,0 +1 @@ESC[m
+ESC[32m+ESC[mESC[32mconsole.log("Untracked File")ESC[m
