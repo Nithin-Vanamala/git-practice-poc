@@ -1,0 +1,64 @@
+
+$ git branch
+* ESC[32mmasterESC[m
+$ git checkout -b new_branch
+Switched to a new branch 'new_branch'
+$ git branch
+  masterESC[m
+* ESC[32mnew_branchESC[m
+$ git branch -va
+  master    ESC[m 10d569a First Commit on master
+* ESC[32mnew_branchESC[m b8f8fe5 Commit on branch
+$ touch file.txt
+$ echo 1>file.txt
+$ git add file.txt
+$ git commit -m "commit on new_branch"
+[new_branch 53d724e] commit on new_branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+$ git switch master
+git: 'switch' is not a git command. See 'git --help'.
+$ git checkout master
+Switched to branch 'master'
+$ git merge master
+Already up to date.
+$ git merge new_branch
+Updating 10d569a..53d724e
+Fast-forward
+ file.txt       | 1 +
+ new-file-6.txt | 1 +
+ staging.txt    | 2 +-
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 file.txt
+ create mode 100644 new-file-6.txt
+$ git push origin new_branch
+Counting objects: 12, done.
+Delta compression using up to 48 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (12/12), 1.00 KiB | 513.00 KiB/s, done.
+Total 12 (delta 0), reused 0 (delta 0)
+To /s/remote-project/1
+ * [new branch]      new_branch -> new_branch
+$ 
+$ git push new_branch master
+fatal: 'new_branch' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+$ git push origin  master
+Total 0 (delta 0), reused 0 (delta 0)
+To /s/remote-project/1
+ * [new branch]      master -> master
+$ git push master new_branch
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+$ git status
+On branch master
+nothing to commit, working tree clean
+$ git branch -d new_branch
+Deleted branch new_branch (was 53d724e).
+$ 

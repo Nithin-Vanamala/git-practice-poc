@@ -1,0 +1,283 @@
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas (master)
+$ cd git-tag
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag (master)
+$ git tag
+0.1.1
+0.2.0
+0.3.0
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag (master)
+$ ls
+README.md  setup.ps1  setup.sh*
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag (master)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-4/git-katas/git-tag/exercise/.git/
+warning: in the working copy of 'dummy.txt', LF will be replaced by CRLF the next time Git touches it
+[master (root-commit) 1431868] dummy commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dummy.txt
+warning: in the working copy of 'dummy.txt', LF will be replaced by CRLF the next time Git touches it
+[master 7021e6c] adding more content to dummy.txt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag
+dummy
+dummy2
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag v1.0
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag
+dummy
+dummy2
+v1.0
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ touch file1.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git add file1.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git commit -m "commit before "
+[master 656a6f3] commit before
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag -a v2.0
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/git-tag/exercise/.git/TAG_EDITMSG to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/git-tag/exercise/.git/TAG_EDITMSG to Unix format...
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag
+dummy
+dummy2
+v1.0
+v2.0
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git show v2.0
+tag v2.0
+Tagger: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 12:51:47 2022 +0530
+
+after committed
+
+commit 656a6f387cef474863e08c1ce25332f7edb83bc8 (HEAD -> master, tag: v2.0)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 12:51:24 2022 +0530
+
+    commit before
+
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..e69de29
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag -m
+error: switch `m' requires a value
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag -n
+dummy           dummy commit
+dummy2          don't worry, be happy
+v1.0            adding more content to dummy.txt
+v2.0            after committed
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ echo 1 >file1.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git add file1.txt
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git commit -m "commit 2"
+[master eed8dff] commit 2
+ 1 file changed, 1 insertion(+)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ echo 2 >file1.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git add file1.txt
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git commit -m "commit 3"
+[master 822f068] commit 3
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git log --oneline
+822f068 (HEAD -> master) commit 3
+eed8dff commit 2
+656a6f3 (tag: v2.0) commit before
+7021e6c (tag: v1.0, tag: dummy2) adding more content to dummy.txt
+1431868 (tag: dummy) dummy commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag -a v3.0 eed8dff
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/git-tag/exercise/.git/TAG_EDITMSG to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/git-tag/exercise/.git/TAG_EDITMSG to Unix format...
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tags -n
+git: 'tags' is not a git command. See 'git --help'.
+
+The most similar commands are
+        stage
+        tag
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag -n
+dummy           dummy commit
+dummy2          don't worry, be happy
+v1.0            adding more content to dummy.txt
+v2.0            after committed
+v3.0            tags 2 committed
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git show v3.0
+tag v3.0
+Tagger: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 12:55:35 2022 +0530
+
+tags 2 committed
+
+commit eed8dff05b3ca287d5827130c741750366a28d84 (tag: v3.0)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 12:54:11 2022 +0530
+
+    commit 2
+
+diff --git a/file1.txt b/file1.txt
+index e69de29..d00491f 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -0,0 +1 @@
++1
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git show
+commit 822f0682ce78c4a5bab87338b2c999bf93e2dfcf (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 12:54:32 2022 +0530
+
+    commit 3
+
+diff --git a/file1.txt b/file1.txt
+index d00491f..0cfbf08 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1 +1 @@
+-1
++2
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag
+dummy
+dummy2
+v1.0
+v2.0
+v3.0
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git log
+commit 822f0682ce78c4a5bab87338b2c999bf93e2dfcf (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 12:54:32 2022 +0530
+
+    commit 3
+
+commit eed8dff05b3ca287d5827130c741750366a28d84 (tag: v3.0)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 12:54:11 2022 +0530
+
+    commit 2
+
+commit 656a6f387cef474863e08c1ce25332f7edb83bc8 (tag: v2.0)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 12:51:24 2022 +0530
+
+    commit before
+
+commit 7021e6c0f582a2366ad82bb881bf57aa9d1c6aeb (tag: v1.0, tag: dummy2)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 12:32:09 2022 +0530
+
+    adding more content to dummy.txt
+
+commit 14318687cb538a9b94ab7745c100ae4549b7e177 (tag: dummy)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 12:32:08 2022 +0530
+
+    dummy commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag -n
+dummy           dummy commit
+dummy2          don't worry, be happy
+v1.0            adding more content to dummy.txt
+v2.0            after committed
+v3.0            tags 2 committed
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ echo 4 > file1.txt
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git add file1.txt
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git commit - m "nithin"
+error: pathspec '-' did not match any file(s) known to git
+error: pathspec 'm' did not match any file(s) known to git
+error: pathspec 'nithin' did not match any file(s) known to git
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git commit -m "nithin"
+[master 4976829] nithin
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git log --oneline
+4976829 (HEAD -> master) nithin
+822f068 commit 3
+eed8dff (tag: v3.0) commit 2
+656a6f3 (tag: v2.0) commit before
+7021e6c (tag: v1.0, tag: dummy2) adding more content to dummy.txt
+1431868 (tag: dummy) dummy commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag v5.0 4976829
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag -n
+dummy           dummy commit
+dummy2          don't worry, be happy
+v1.0            adding more content to dummy.txt
+v2.0            after committed
+v3.0            tags 2 committed
+v5.0            nithin
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag -d v2.0
+Deleted tag 'v2.0' (was dcf64a2)
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$ git tag -n
+dummy           dummy commit
+dummy2          don't worry, be happy
+v1.0            adding more content to dummy.txt
+v3.0            tags 2 committed
+v5.0            nithin
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/git-tag/exercise (master)
+$

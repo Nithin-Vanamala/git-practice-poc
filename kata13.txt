@@ -1,0 +1,225 @@
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-the-history (master)
+$ source setup.sh
+Initialized empty Git repository in D:/zemoso/learning/git/day1-4/git-katas/reorder-the-history/remote/
+Cloning into 'exercise'...
+warning: You appear to have cloned an empty repository.
+done.
+warning: in the working copy of 'foo.txt', LF will be replaced by CRLF the next time Git touches it
+[master (root-commit) 8388a4b] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 foo.txt
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 224 bytes | 112.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/zemoso/learning/git/day1-4/git-katas/reorder-the-history/./remote
+ * [new branch]      master -> master
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 167 bytes | 167.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To D:/zemoso/learning/git/day1-4/git-katas/reorder-the-history/./remote
+ * [new tag]         START -> START
+warning: in the working copy of 'file1', LF will be replaced by CRLF the next time Git touches it
+[master ccfe75f] file1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1
+warning: in the working copy of 'file9', LF will be replaced by CRLF the next time Git touches it
+[master 993b33e] file9
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file9
+warning: in the working copy of 'file8', LF will be replaced by CRLF the next time Git touches it
+[master 411537d] file8
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file8
+warning: in the working copy of 'file3', LF will be replaced by CRLF the next time Git touches it
+[master f66636d] file3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file3
+warning: in the working copy of 'file4', LF will be replaced by CRLF the next time Git touches it
+[master 70bd4d0] file4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file4
+warning: in the working copy of 'file5', LF will be replaced by CRLF the next time Git touches it
+[master c651704] file5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file5
+warning: in the working copy of 'file2', LF will be replaced by CRLF the next time Git touches it
+[master ecd4102] file2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2
+warning: in the working copy of 'file6', LF will be replaced by CRLF the next time Git touches it
+[master 7e7c0cd] file6
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file6
+warning: in the working copy of 'file7', LF will be replaced by CRLF the next time Git touches it
+[master 0956796] file7
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file7
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise (master)
+$ git log
+commit 0956796b0be562b7ac3fe8fdfb61407b4c816251 (HEAD -> master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:04:49 2022 +0530
+
+    file7
+
+commit 7e7c0cda80be705e3a712c3e12c1f6c5b8b00a69
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:04:49 2022 +0530
+
+    file6
+
+commit ecd41022cec394fd49491609c49e1d16e8b5202a
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:04:49 2022 +0530
+
+    file2
+
+commit c6517043bafe1ec1bab50260642bd3e3e235c996
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:04:49 2022 +0530
+
+    file5
+
+commit 70bd4d0a6439231be5294d81bc3907d8000d46f3
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:04:48 2022 +0530
+
+    file4
+
+commit f66636d644f60795d3a7010bc79fa0ca505adb2c
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:04:48 2022 +0530
+
+    file3
+
+commit 411537defde0c4b828024340c6368f539c233bd0
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:04:48 2022 +0530
+
+    file8
+
+commit 993b33ea7f206506c43bec46ddd75672b2ab2140
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:04:48 2022 +0530
+
+    file9
+
+commit ccfe75fdb39cc9de1dd8af073a79f508f149f6c4
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:04:47 2022 +0530
+
+    file1
+
+commit 8388a4bbd6a9ce875c8b4fb2d9796627a7e8d166 (tag: START, origin/master)
+Author: Nithin <nithin.vanamala@zemosolabs.com>
+Date:   Thu Nov 10 07:04:46 2022 +0530
+
+
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise (master)
+$
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise (master)
+$ git rebace -i HEAD~9
+git: 'rebace' is not a git command. See 'git --help'.
+
+The most similar command is
+        rebase
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise (master)
+$ git rebaSe -i HEAD~9
+fatal: cannot handle rebaSe as a builtin
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise (master)
+$ git rebase -i HEAD~9
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise/.git/rebase-merge/git-rebase-todo to DOS format...
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise (master)
+$ git log --oneline
+ff6d298 (HEAD -> master) file8
+ce8dfaa file9
+8b41252 file7
+9f03ed0 file6
+dd3bac1 file5
+d2b2cf9 file4
+51287be file3
+75391b8 file2
+ccfe75f file1
+8388a4b (tag: START, origin/master) Initial commit
+
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-th
+$ git reflog
+ff6d298 (HEAD -> master) HEAD@{0}: rebase (finish): returning to refs/heads/mast
+ff6d298 (HEAD -> master) HEAD@{1}: rebase (pick): file8
+ce8dfaa HEAD@{2}: rebase (pick): file9
+8b41252 HEAD@{3}: rebase (pick): file7
+9f03ed0 HEAD@{4}: rebase (pick): file6
+dd3bac1 HEAD@{5}: rebase (pick): file5
+d2b2cf9 HEAD@{6}: rebase (pick): file4
+51287be HEAD@{7}: rebase (pick): file3
+75391b8 HEAD@{8}: rebase (pick): file2
+ccfe75f HEAD@{9}: rebase (start): checkout HEAD~9
+0956796 HEAD@{10}: commit: file7
+7e7c0cd HEAD@{11}: commit: file6
+ecd4102 HEAD@{12}: commit: file2
+c651704 HEAD@{13}: commit: file5
+70bd4d0 HEAD@{14}: commit: file4
+f66636d HEAD@{15}: commit: file3
+411537d HEAD@{16}: commit: file8
+993b33e HEAD@{17}: commit: file9
+ccfe75f HEAD@{18}: commit: file1
+8388a4b (tag: START, origin/master) HEAD@{19}: commit (initial): Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-th
+$ git rebase -i HEAD~3
+hint: Waiting for your editor to close the file... unix2dos: converting file D:/
+dos2unix: converting file D:/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise/.git/rebase-merge/git-rebase-todo to Unix format...
+Successfully rebased and updated refs/heads/master.
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise (master)
+$ git reflog
+55e1c74 (HEAD -> master) HEAD@{0}: rebase (finish): returning to refs/heads/master
+55e1c74 (HEAD -> master) HEAD@{1}: rebase (pick): file9
+263bc77 HEAD@{2}: rebase (pick): file8
+8b41252 HEAD@{3}: rebase (start): checkout HEAD~3
+ff6d298 HEAD@{4}: rebase (finish): returning to refs/heads/master
+ff6d298 HEAD@{5}: rebase (pick): file8
+ce8dfaa HEAD@{6}: rebase (pick): file9
+8b41252 HEAD@{7}: rebase (pick): file7
+9f03ed0 HEAD@{8}: rebase (pick): file6
+dd3bac1 HEAD@{9}: rebase (pick): file5
+d2b2cf9 HEAD@{10}: rebase (pick): file4
+51287be HEAD@{11}: rebase (pick): file3
+75391b8 HEAD@{12}: rebase (pick): file2
+ccfe75f HEAD@{13}: rebase (start): checkout HEAD~9
+0956796 HEAD@{14}: commit: file7
+7e7c0cd HEAD@{15}: commit: file6
+ecd4102 HEAD@{16}: commit: file2
+c651704 HEAD@{17}: commit: file5
+70bd4d0 HEAD@{18}: commit: file4
+f66636d HEAD@{19}: commit: file3
+411537d HEAD@{20}: commit: file8
+993b33e HEAD@{21}: commit: file9
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise (master)
+$ git log --oneline
+55e1c74 (HEAD -> master) file9
+263bc77 file8
+8b41252 file7
+9f03ed0 file6
+dd3bac1 file5
+d2b2cf9 file4
+51287be file3
+75391b8 file2
+ccfe75f file1
+8388a4b (tag: START, origin/master) Initial commit
+
+heart@DESKTOP-AE873ES MINGW64 /d/zemoso/learning/git/day1-4/git-katas/reorder-the-history/exercise (master)
+$
+

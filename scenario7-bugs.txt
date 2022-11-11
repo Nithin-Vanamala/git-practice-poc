@@ -1,0 +1,217 @@
+This is your command line, a safe place to practice & complete the scenario
+
+$ git diff HEAD~2 HEAD
+ESC[1mdiff --git a/list.html b/list.htmlESC[m
+ESC[1mindex 96e99d0..9f53aec 100644ESC[m
+ESC[1m--- a/list.htmlESC[m
+ESC[1m+++ b/list.htmlESC[m
+ESC[36m@@ -2,4 +2,6 @@ESC[m
+ <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>ESC[m
+ <li>Aliquam tincidunt mauris eu risus.</li>ESC[m
+ <li>Vestibulum auctor dapibus neque.</li>ESC[m
+ESC[32m+ESC[mESC[32m<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a
+ESC[32m+ESC[mESC[32m<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate 
+ </ul>ESC[m
+$ git diff
+$ git log -p
+ESC[33mcommit ab70b6d9a2e1738a71140d39a3d12c8fb9535d88ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmaste
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    Final Item
+
+ESC[1mdiff --git a/list.html b/list.htmlESC[m
+ESC[1mindex def310d..9f53aec 100644ESC[m
+ESC[1m--- a/list.htmlESC[m
+ESC[1m+++ b/list.htmlESC[m
+ESC[36m@@ -3,4 +3,5 @@ESC[m
+ <li>Aliquam tincidunt mauris eu risus.</li>ESC[m
+ <li>Vestibulum auctor dapibus neque.</li>ESC[m
+ <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a.</li>ESC[m
+ESC[32m+ESC[mESC[32m<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate 
+ </ul>ESC[m
+
+ESC[33mcommit 6f26935e42e38e6b787f9c331fc74d738440d727ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    New Item
+
+ESC[1mdiff --git a/list.html b/list.htmlESC[m
+ESC[1mindex 96e99d0..def310d 100644ESC[m
+ESC[1m--- a/list.htmlESC[m
+ESC[1m+++ b/list.htmlESC[m
+ESC[36m@@ -2,4 +2,5 @@ESC[m
+ <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>ESC[m
+ <li>Aliquam tincidunt mauris eu risus.</li>ESC[m
+ <li>Vestibulum auctor dapibus neque.</li>ESC[m
+ESC[32m+ESC[mESC[32m<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a
+ </ul>ESC[m
+
+ESC[33mcommit 8c77882f35696b31d7c4fc31690186198a2e49d2ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    Initial commit of the list
+
+ESC[1mdiff --git a/list.html b/list.htmlESC[m
+ESC[1mnew file mode 100644ESC[m
+ESC[1mindex 0000000..96e99d0ESC[m
+ESC[1m--- /dev/nullESC[m
+ESC[1m+++ b/list.htmlESC[m
+ESC[36m@@ -0,0 +1,5 @@ESC[m
+ESC[32m+ESC[mESC[32m<ul>ESC[m
+ESC[32m+ESC[mESC[32m<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>ESC[m
+ESC[32m+ESC[mESC[32m<li>Aliquam tincidunt mauris eu risus.</li>ESC[m
+ESC[32m+ESC[mESC[32m<li>Vestibulum auctor dapibus neque.</li>ESC[m
+ESC[32m+ESC[mESC[32m</ul>ESC[m
+$ git log -m
+ESC[33mcommit ab70b6d9a2e1738a71140d39a3d12c8fb9535d88ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmaste
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    Final Item
+
+ESC[33mcommit 6f26935e42e38e6b787f9c331fc74d738440d727ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    New Item
+
+ESC[33mcommit 8c77882f35696b31d7c4fc31690186198a2e49d2ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    Initial commit of the list
+$ git log
+ESC[33mcommit ab70b6d9a2e1738a71140d39a3d12c8fb9535d88ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmaste
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    Final Item
+
+ESC[33mcommit 6f26935e42e38e6b787f9c331fc74d738440d727ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    New Item
+
+ESC[33mcommit 8c77882f35696b31d7c4fc31690186198a2e49d2ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    Initial commit of the list
+...skipping...
+ESC[33mcommit ab70b6d9a2e1738a71140d39a3d12c8fb9535d88ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmaste
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    Final Item
+
+ESC[33mcommit 6f26935e42e38e6b787f9c331fc74d738440d727ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    New Item
+
+ESC[33mcommit 8c77882f35696b31d7c4fc31690186198a2e49d2ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:43:02 2022 +0000
+
+    Initial commit of the list
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+$ git bisect start
+$ git bisect bad
+$ git bisect good HEAD~5
+Bisecting: 2 revisions left to test after this (roughly 1 step)
+[ab70b6d9a2e1738a71140d39a3d12c8fb9535d88] Final Item
+$ cat list.html
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+<li>Vestibulum auctor dapibus neque.</li>
+<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a.</li>
+<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</li>
+</ul>
+$ git bisect good
+Bisecting: 0 revisions left to test after this (roughly 1 step)
+[07cbd0bf110bb4318113ba7ced810e682e2d7d48] Adding Quisque
+$ cat list.html
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+<li>Vestibulum auctor dapibus neque.</li>
+<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a.</li>
+<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</li>
+Vestibulum auctor dapibus neque
+<li>Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed.</li>
+</ul>
+$ git bisect bad
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[e37b850663e13b4b239805eb290353e607ece635] Adding Vestibulum
+$ git blame list.html
+^8c77882 (Katacoda Scenario 2022-11-10 12:43:02 +0000  1) <ul>
+^8c77882 (Katacoda Scenario 2022-11-10 12:43:02 +0000  2) <li>Lorem ipsum dolor sit amet, consectetuer adipis
+^8c77882 (Katacoda Scenario 2022-11-10 12:43:02 +0000  3) <li>Aliquam tincidunt mauris eu risus.</li>
+^8c77882 (Katacoda Scenario 2022-11-10 12:43:02 +0000  4) <li>Vestibulum auctor dapibus neque.</li>
+6f26935e (Katacoda Scenario 2022-11-10 12:43:02 +0000  5) <li>Morbi in sem quis dui placerat ornare. Pellente
+ab70b6d9 (Katacoda Scenario 2022-11-10 12:43:02 +0000  6) <li>Praesent dapibus, neque id cursus faucibus, tor
+e37b8506 (Katacoda Scenario 2022-11-10 12:49:43 +0000  7) Vestibulum auctor dapibus neque
+07cbd0bf (Katacoda Scenario 2022-11-10 12:49:43 +0000  8) <li>Quisque sit amet est et sapien ullamcorper phar
+a528d3f1 (Katacoda Scenario 2022-11-10 12:49:43 +0000  9) <li>Pellentesque fermentum dolor</li>
+^8c77882 (Katacoda Scenario 2022-11-10 12:43:02 +0000 10) </ul>
+...skipping...
+^8c77882 (Katacoda Scenario 2022-11-10 12:43:02 +0000  1) <ul>
+^8c77882 (Katacoda Scenario 2022-11-10 12:43:02 +0000  2) <li>Lorem ipsum dolor sit amet, consectetuer adipis
+^8c77882 (Katacoda Scenario 2022-11-10 12:43:02 +0000  3) <li>Aliquam tincidunt mauris eu risus.</li>
+^8c77882 (Katacoda Scenario 2022-11-10 12:43:02 +0000  4) <li>Vestibulum auctor dapibus neque.</li>
+6f26935e (Katacoda Scenario 2022-11-10 12:43:02 +0000  5) <li>Morbi in sem quis dui placerat ornare. Pellente
+ab70b6d9 (Katacoda Scenario 2022-11-10 12:43:02 +0000  6) <li>Praesent dapibus, neque id cursus faucibus, tor
+e37b8506 (Katacoda Scenario 2022-11-10 12:49:43 +0000  7) Vestibulum auctor dapibus neque
+07cbd0bf (Katacoda Scenario 2022-11-10 12:49:43 +0000  8) <li>Quisque sit amet est et sapien ullamcorper phar
+a528d3f1 (Katacoda Scenario 2022-11-10 12:49:43 +0000  9) <li>Pellentesque fermentum dolor</li>
+^8c77882 (Katacoda Scenario 2022-11-10 12:43:02 +0000 10) </ul>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+$ git blame -L 6,8 list.html
+ab70b6d9 (Katacoda Scenario 2022-11-10 12:43:02 +0000 6) <li>Praesent dapibus, neque id cursus faucibus, tort
+e37b8506 (Katacoda Scenario 2022-11-10 12:49:43 +0000 7) Vestibulum auctor dapibus neque
+07cbd0bf (Katacoda Scenario 2022-11-10 12:49

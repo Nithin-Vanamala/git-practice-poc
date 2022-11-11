@@ -1,0 +1,119 @@
+$ git fetch
+$ git merge origin/master
+fatal: refusing to merge unrelated histories
+$ git pull origin/master
+fatal: 'origin/master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+$ git pull origin master
+From /s/remote-project/1
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+$ git diff
+$ ls
+new-file-5a.txt  new-file-5.txt  staging.txt
+$ cat new-file-5a.txt
+New
+$ cat new-file-5.txt
+New
+$ cat staging.txt
+Error reolved
+$ echo "Error resolved" > staging.txt
+$ cat staging.txt
+Error resolved
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+tortoisemerge emerge vimdiff
+No files need merging
+$ git add staging.txt
+$ git commit -m "Changes dome"
+[master ae17447] Changes dome
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git pull --no-edit origin master
+From /s/remote-project/1
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+$ git log --all --decorate --oneline
+ESC[33mae17447ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m Changes dome
+ESC[33m90947f6ESC[mESC[33m (ESC[mESC[1;31morigin/masterESC[mESC[33m)ESC[m Fix for Bug #58a
+ESC[33m4975dd2ESC[m Fix for Bug #55
+ESC[33m7fb6a50ESC[m Fix for Bug #58
+ESC[33m1d880b1ESC[m Committed
+ESC[33mb3e6c9fESC[m Fixing Error
+ESC[33m976eef7ESC[m Fix for Bug #1234
+ESC[33m1a4ea2bESC[m First Commit
+$ git add staging.txt
+$ git commit -m "Changes done"
+On branch master
+nothing to commit, working tree clean
+$ git merge master
+Already up to date.
+$ git rebase feature/10
+fatal: Needed a single revision
+invalid upstream 'feature/10'
+$ 
+$ git log --oneline
+ESC[33m072426cESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m Fix for Bug #12 made
+ESC[33mad08a14ESC[m Fix for Bug #10 made on master
+ESC[33mae17447ESC[m Changes dome
+ESC[33m4975dd2ESC[m Fix for Bug #55
+ESC[33m1d880b1ESC[m Committed
+ESC[33mb3e6c9fESC[m Fixing Error
+ESC[33m1a4ea2bESC[m First Commit
+$ git rebase origin/master
+First, rewinding head to replay your work on top of it...
+Applying: First Commit
+Using index info to reconstruct a base tree...
+Falling back to patching base and 3-way merge...
+Auto-merging staging.txt
+CONFLICT (add/add): Merge conflict in staging.txt
+error: Failed to merge in the changes.
+Patch failed at 0001 First Commit
+Use 'git am --show-current-patch' to see the failed patch
+
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+
+$ git pull --rebase
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+$ 
+$ vi new-file-5a.txt
+$ cat new-file-5a.txt
+Text inserted
+$ git add new-file-5a.txt
+$ git commit -m "Committed"
+U       staging.txt
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+$ git merge remotes/origin/master
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+$ git merge master
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+$ git add -A
+$ git commit -m "Done"
+[detached HEAD 988f784] Done
+ 2 files changed, 5 insertions(+)
+ create mode 100644 new-file-5a.txt
+$ git merge master
+fatal: refusing to merge unrelated histories
+$ git merge origin/master
+Already up to date.
+$ 

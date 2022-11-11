@@ -1,0 +1,70 @@
+
+$ git remote add origin /s/remote-project/1
+$ git push origin master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 228 bytes | 228.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To /s/remote-project/1
+ * [new branch]      master -> master
+$ git pull origin master
+From /s/remote-project/1
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+$ git log
+ESC[33mcommit 260b354f11c66e260bfacfc764a0f88e87b4df9aESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmaste
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:25:06 2022 +0000
+
+    Message
+...skipping...
+ESC[33mcommit 260b354f11c66e260bfacfc764a0f88e87b4df9aESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmaste
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:25:06 2022 +0000
+
+    Message
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+$ git log --grep="#1234"
+$ git checkout origin/master
+Note: checking out 'origin/master'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 260b354 Message
+$ git checkout remotes/origin/master
+HEAD is now at 260b354 Message
+$ 

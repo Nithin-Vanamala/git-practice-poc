@@ -1,0 +1,30 @@
+This is your command line, a safe place to practice & complete the scenario
+
+$ git checkout .
+$ git reset HEAD .
+Unstaged changes after reset:
+M       staging.txt
+$ git reset --hard HEAD
+HEAD is now at aef0436 New File
+$ git revert HEAD --no-edit
+[master e9edc5b] Revert "Commit To Revert"
+ Date: Thu Nov 10 13:00:22 2022 +0000
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git revert HEAD...HEAD~2
+[master 62e40e1] Revert "Revert "Commit To Revert""
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 7bfa119] Revert "Commit To Revert"
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git revert HEAD...HEAD~2 --no-edit
+[master 1853d39] Revert "Revert "Commit To Revert""
+ Date: Thu Nov 10 13:01:22 2022 +0000
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 88beac3] Revert "Revert "Revert "Commit To Revert"""
+ Date: Thu Nov 10 13:01:22 2022 +0000
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ 
+
+
+
+
+
